@@ -1,0 +1,113 @@
+
+<div class="card">
+
+  <div class="card_edit_tools">
+
+    <%= link_to '<i class="fa fa-edit""></i>'.html_safe, '/sandbox/edit', title: 'Editar' %>
+    <%= link_to '<i class="fa fa-share-alt""></i>'.html_safe, '', title: 'Compartir' %>
+    <%= link_to '<i class="fa fa-comment-o""></i>'.html_safe, '', title: 'Comentar' %>
+    
+  </div>
+
+  <div class="text_content">
+    <h1>Capítulo 1: Madrid, qué bien resistes</h1>
+  </div>
+
+  <div class="media">
+    <div class="video">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/eYQFuP4_mps" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div class="main_text text_content">
+    <p>Histórica de la Movida Madrileña. Nació en El Escorial, y vino a Madrid a estudiar Farmacia. Estudiaba piano clásico en el Conservatorio. Fue parte junto con Eduardo Benavente de uno de los primeros sellos independientes de Madrid (3 Cipreses), que editaron entre otros las primeras referencias de Parálisis Permanente y Gabinete Caligari.</p>
+  </div>
+
+  <div class="further">
+
+    <menu>
+      <h2 class="related-link active"><a href=""><i class="fa fa-random"></i> Relacionado</a></h2>
+      <h2 class="conversations-link"><a href=""><i class="fa fa-comment-o"></i> Conversaciones</a></h2>
+    </menu>
+
+    <div class="related text_content">
+      
+      <div class="related_block">
+        <h3>Capítulos</h3>
+        <ul>
+          <li><%= link_to 'Capítulo 1: Madrid, qué bien resistes', '' %></li>
+          <li><%= link_to 'Capítulo 2: Hippies, Progres y Protopunks', '' %></li>
+          <li><%= link_to 'Capítulo 3: La Movida punk', '' %></li>
+          <li><%= link_to 'Capítulo 4: Rockola no quiere punks' %></li>
+          <li><%= link_to 'Capítulo 5: El Desencanto' %></li>
+          <li><%= link_to 'Capitulo 6: Segunda generación' %></li>
+          <li><%= link_to 'Capítulo 7: Amparo 83' %></li>
+          <li><%= link_to '...' %></li>
+        </ul>
+      </div>
+
+      <div class="related_block">
+        <h3>Personas</h3>
+        <ul>
+          <li><%= link_to 'Eduardo Benavente', '' %></li>
+          <li><%= link_to 'Nacho Canut', '' %></li>
+          <li><%= link_to 'Alaska', '' %></li>
+          <li><%= link_to '...' %></li>
+          <li><%= link_to '+', '', class: 'add_more' %></li>
+        </ul>
+      </div>
+
+      <div class="related_block">
+        <h3>Bandas</h3>
+        <ul>
+          <li><%= link_to 'Alaska y Los Pegamoides', '' %></li>
+          <li><%= link_to 'Parálisis Permanente', '' %></li>
+          <li><%= link_to 'Negros SA', '' %></li>
+          <li><%= link_to 'Seres Vacíos' %></li>
+          <li><%= link_to '+', '', class: 'add_more' %></li>
+        </ul>
+      </div>
+
+      <div class="related_block">
+        <h3>Temas</h3>
+        <ul>
+          <li><%= link_to 'Rockola', '' %></li>
+          <li><%= link_to 'La Movida', '' %></li>
+          <li><%= link_to 'Pintas', '' %></li>
+          <li><%= link_to 'El Rastro' %></li>
+          <li><%= link_to 'Drogas' %></li>
+          <li><%= link_to '+', '', class: 'add_more' %></li>
+        </ul>
+      </div>
+
+      <div class="related_block">
+        <h3>Periodos</h3>
+        <ul>
+          <li><%= link_to 'Movida Madrileña', '' %></li>
+        </ul>
+      </div>
+
+      <div class="related_block">
+        <h3>Lugares</h3>
+        <ul>
+          <li><%= link_to 'El Escorial', '' %></li>
+          <li><%= link_to 'Malasaña', '' %></li>
+          <li><%= link_to 'Avenida de América', '' %></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="conversations hidden">
+
+      <div class="text_content">
+        
+        conversations ... 
+
+      </div>
+
+    </div>
+      
+  </div>
+
+</div>

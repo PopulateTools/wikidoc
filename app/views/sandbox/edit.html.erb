@@ -1,0 +1,91 @@
+
+<div class="create card">
+
+  <form>
+
+    <div class="text_content field card_type">
+
+      <label><%= radio_button_tag 'card_type', '1' %> Persona</label>
+      <label><%= radio_button_tag 'card_type', '2' %> Banda</label>
+      <label><%= radio_button_tag 'card_type', '3' %> Tema</label>
+      <label><%= radio_button_tag 'card_type', '4' %> Periodo</label>
+      <label><%= radio_button_tag 'card_type', '5' %> Lugar</label>
+      <label><%= radio_button_tag 'card_type', '6' %> Capítulo</label>
+
+    </div>
+
+    <div class="field card_title">
+      <label for="card_title">Título</label>
+      <%= text_field_tag('card_title', 'Capítulo 1: Madrid, qué bien resistes', :id => 'card_title', :class => 'input') %>
+    </div>
+
+    <div class="field card_media">
+      
+      <div class="upload_media media_upload_selector">
+        <%= link_to '<i class="fa fa-file-photo-o"></i> Imagen'.html_safe, '', title: 'Foto, cartel, portada...', class: 'media_upload_image_link' %>
+        <%= link_to '<i class="fa fa-file-movie-o"></i> Video'.html_safe, '', title: 'Video. Y ya.', class: 'media_upload_video_link' %>
+        <%= link_to '<i class="fa fa-file-audio-o"></i> Sonido'.html_safe, '', title: 'Canciones, entrevistas...', class: 'media_upload_audio_link' %>
+      </div>
+
+      <div class="media_upload_image_cont upload_media hidden">
+        
+        <a href="" class="upload_media_back_to_selector"><i class="fa fa-arrow-left"></i></a>
+        
+        Selecciona una imagen de tu disco duro...
+
+      </div>
+
+      <div class="media_upload_video_cont upload_media hidden">
+
+        <a href="" class="upload_media_back_to_selector"><i class="fa fa-arrow-left"></i></a>
+
+        <div class="media_upload_video_cont_inner">
+          <label for="">Introduce la URL del video en Youtube</label>
+          <%= text_field_tag('card_media', '', :id => 'card_title', :class => 'input') %>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="field card_text">
+      <label for="card_title">Texto</label>
+      <%= text_area_tag('card_title', 'Histórica de la Movida Madrileña. Nació en El Escorial, y vino a Madrid a estudiar Farmacia. Estudiaba piano clásico en el Conservatorio. Fue parte junto con Eduardo Benavente de uno de los primeros sellos independientes de Madrid (3 Cipreses), que editaron entre otros las primeras referencias de Parálisis Permanente y Gabinete Caligari.', :id => 'card_text', :class => 'input') %>
+
+    </div>
+
+    <div class="further field card_related">
+
+      <div class="related">
+
+        <div class="related_block">
+          <h3><label for="card_dimension_1">Capítulos</label></h3>
+          <!-- podemos usar un select2 -->
+          <%= text_field_tag('card_related', '', :id => 'card_dimension_1', :class => 'input') %>
+        </div>
+
+        <div class="related_block">
+          <h3><label for="card_dimension_2">Bandas</label></h3>
+          <%= text_field_tag('card_related', '', :id => 'card_dimension_2', :class => 'input') %>
+        </div>
+
+        <div class="related_block">
+          <h3><label for="card_dimension_3">Personas</label></h3>
+          <%= text_field_tag('card_related', '', :id => 'card_dimension_3', :class => 'input') %>
+        </div>
+
+        <%= submit_tag "Añadir dimensión", :class => 'btn small light' %>
+
+      </div>
+
+    </div>
+
+    <div class="field card_submit right">
+      
+      <%= submit_tag "Guardar", :class => 'btn' %>
+
+    </div>
+
+  </form>
+
+</div>

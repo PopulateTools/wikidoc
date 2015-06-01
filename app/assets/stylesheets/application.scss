@@ -1,0 +1,391 @@
+@import "bourbon";
+@import "vendor/populate_utilities";
+
+
+/*
+ * Palette for: Lo Que Hicimos
+ *
+ */
+$background: #F8F5E3;
+$black: #000;
+$text: #565656;
+$white: #fff;
+$main_1: #9E291A;
+$main_2: #BF2F12;
+$second_1: #027E8C;
+$second_2: #014959;
+$second_1_background: #D4E9EB;
+$third_1: #E6BB70;
+$main_soft: #F8D0BE;
+$main_soft_separator: #C2A395;
+
+
+/*
+ * Fonts
+ *
+ */
+@import "http://fonts.googleapis.com/css?family=Droid+Serif:400,700|Montserrat:400,700";
+@import "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css";
+
+$font_headings: 'Montserrat';
+$font_text: 'Droid Serif';
+
+/*
+ * Page elements: header, footer...
+ *
+ */
+body {
+  margin: 0;
+  padding: 0;
+  background: $background;
+  font-family: $font_text;
+  color: $text;
+}
+header.site {
+  border-top: 5px solid $black;
+
+  .main {
+    background: $main_2;
+    padding: -5px 0 0 0;
+  }
+  
+  img.logo {
+    float: left;
+    margin-right: 1em;
+  }
+  menu {
+    position: relative;
+    @include reset_ul_li;
+    @include after_separator(' / ', 5px);
+  }
+  menu.content {
+    color: darken($third_1, 25%);
+    text-transform: uppercase;
+    font-family: $font_headings;
+    font-size: 13px;
+    margin-top: 1.35em;
+
+    a {
+      color: $third_1;
+      text-decoration: none;
+    }
+  }
+  .add_content {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  menu.tools_links {
+    font-family: $font_headings;
+    font-weight: normal;
+    font-size: .75em; 
+    text-align: right; 
+    color: $main_soft_separator;
+    margin: .5em 1em;
+
+    a {
+      color: $main_soft_separator;
+      text-decoration: none;
+    }
+  }
+}
+a {
+  color: $second_2;
+}
+footer {
+  text-align: center;
+  font-size: .75em;
+  margin: 4em 0;
+
+  menu {
+    @include reset_ul_li;
+    @include after_separator(' / ');
+  }
+}
+footer.app {
+
+}
+/*
+ * Headings
+ *
+ */
+h1, h2, h3, h4, h5 {
+  font-family: $font_headings;
+}
+
+/*
+ * Cards
+ *
+ */
+.card {
+  position: relative;
+  margin: 3em auto; 
+  background: $white; 
+  border-top: 1px solid $white;
+  width: 70%;
+  @include border-radius(10px);
+
+  .main_text {
+    margin-bottom: 4em;
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .card_edit_tools {
+    position: absolute;
+    background: $main_soft;
+    top: 3em; 
+    right: -56px;
+    font-size: 24px;
+    padding: 5px 0;
+    @include border-radius(0, 8px, 8px, 0);
+
+    a {
+      display: block;
+      padding: 15px 16px;
+      color: $main_soft_separator;
+    }
+    a:hover {
+      background: darken($main_soft, 10%);
+    }
+    a:not(:last-child) {
+      border-bottom: 1px solid $main_soft_separator;
+    }
+  }
+  .text_content {
+    padding: 0 4em;
+  }
+  h1 {
+    color: $main_1;
+    margin: 1em 0 .85em;
+  }
+
+  .media {
+    margin: 0 0 3em 0;
+
+    .video {
+      position: relative;
+      padding-bottom: 56.25%;
+      padding-top: 30px; height: 0; overflow: hidden;
+    }
+    .video iframe,
+    .video object,
+    .video embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .further {
+    margin: 2em 0;
+    padding: 2em 0;
+
+    h2 {
+      color: $second_1;
+    }
+
+    menu {
+      overflow: hidden;
+      border-top: 1px solid $second_1_background;
+      margin-bottom: 3em;
+
+      h2 {
+        background: $second_1_background;
+        font-size: 1.1em;
+        width: 50%;
+        float: left;
+        margin: 0;
+
+        .fa {
+          margin-right: 1em;
+        }
+
+        a {
+          padding: 4% 5%;
+          display: block;
+          text-decoration: none;
+          color: $second_1;
+        }
+      }
+      h2.active {
+        background: $white;
+      }
+    }
+    .related {
+      .related_block {
+        overflow: hidden;
+        margin: 0 0 2em 0;
+        font-size: .85em;
+        line-height: 1.4em;
+
+        h3 {
+          width: 100px;
+          float: left;
+          margin: 0 0 .5em 0;
+          text-transform: uppercase;
+          color: $second_1;
+          font-size: 1em;
+          font-weight: normal;
+        }  
+        @include reset_ul_li;
+        @include after_separator(', ');
+        ul {
+          margin: 0 0 0 120px;
+        }
+      }
+    }
+    .conversations {
+
+    }
+  }
+}
+.create {
+  form {
+    input {
+      box-sizing: border-box;
+      outline: none;
+    }
+    .active {
+      background: lighten($third_1, 30%);
+    }
+    .field {
+      border-bottom: 1px solid $third_1;
+      padding: 2em 4em;
+
+      &.card_type {
+        label {
+          display: inline-block;
+          padding: .5em 2em .5em 0;
+        }
+      }
+      label {
+        font-family: $font_headings;
+        text-transform: uppercase;
+        color: $text;
+        font-size: 12px;
+        display: block;
+      }
+      &:hover {
+        background: lighten($third_1, 30%);
+      }
+    }
+    .card_title {
+      input {
+        width: 100%;
+        font-size: 2.2em;
+        border: none;
+        background: transparent;
+        color: $main_1;
+        font-family: $font_headings;
+      }
+    }
+    .card_media {
+      font-family: $font_headings;
+      padding: 1em 1em 1em 2.2em;
+
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 1em 2em;
+        color: $main_1;
+        @include border-radius(4px);
+      }
+      a:hover {
+        background: $third_1;
+      }
+      .fa {
+        font-size: 1.4em;
+        margin-right: .5em;
+        color: $main_soft_separator;
+      }
+    }
+    .card_text {
+      textarea {
+        width: 100%;
+        height: 500px;
+        border: none;
+        background: transparent;
+        font-family: $font_text;
+        font-size: 16px;
+        line-height: 22px;
+        outline: none;
+      }
+    }
+    .card_related {
+      margin: 0;
+      .input {
+        width: 66%;
+        padding: 4px 6px;
+        font-size: 14px;
+      }
+      .btn.small {
+        margin-left: 100px;
+      }
+    }
+    .card_submit {
+      background: $third_1;
+      padding: 2em 4em;
+      @include border-radius(0, 0, 10px, 10px);
+      &:hover {
+        background: $third_1;
+      }
+    }
+    .media_upload_selector {
+      a {
+        display: inline-block;
+      }
+    }
+    .upload_media_back_to_selector {
+      display: inline-block;
+      margin-right: 1em;
+    }
+    .media_upload_video_cont_inner {
+      display: inline-block; 
+    }
+
+  }
+}
+
+
+/*
+ * Buttons
+ *
+ */
+.btn {
+  background: $main_1;
+  color: $white;
+  @include border-radius(6px);
+  padding: 1em 2em;
+  font-size: 1.1em;
+  font-family: $font_headings;
+  text-transform: uppercase;
+  border: none;
+  border-right: 3px solid darken($main_1, 20%);
+  border-bottom: 3px solid darken($main_1, 20%);
+}
+.btn.small {
+  padding: .4em 2em;
+  font-size: .8em;
+  width: initial;
+  background: $main_soft;
+  border-right: 1px solid darken($main_soft, 20%);
+  border-bottom: 1px solid darken($main_soft, 20%);
+  @include border-radius(4px);
+  color: $main_1;
+}
+.btn.light {
+
+}
+
+/*
+ * Resets
+ *
+ */
+menu {
+  margin: 0;
+  padding: 0;
+}
+
+

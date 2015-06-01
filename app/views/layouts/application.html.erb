@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wikidoc</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<header class="site">
+  <div class="main clearfix">
+    <%= image_tag 'lqh-logo.png', class: 'logo' %>
+
+    <menu class="content">
+      <ul>
+        <li><%= link_to 'La Película', '/sandbox/list' %></li>
+        <li><%= link_to 'Bandas', '' %></li>
+        <li><%= link_to 'Personas', '' %></li>
+        <li><%= link_to 'Épocas', '' %></li>
+        <li><%= link_to 'Temas', '' %></li>
+        <li><%= link_to 'Lugares', '' %></li>
+      </ul>
+    </menu>
+
+    <%= link_to 'Add content', '/sandbox/edit', class: 'add_content' %>
+
+  </div>
+
+  <menu class="tools_links">
+    <ul class="after_separator">
+      <li><%= link_to 'Acerca de', '' %></li>
+      <li><%= link_to 'Últimos cambios', '' %></li>
+      <li><%= link_to 'Recibe actualizaciones', '' %></li>
+      <li><%= link_to 'Tu cuenta', '' %></li>
+    </ul>
+  </menu>
+
+</header>
+
+<%= yield %>
+
+<footer class="site">
+    
+  <menu class="tools_links">
+    <ul class="after_separator">
+      <li><%= link_to 'Acerca de', '' %></li>
+      <li><%= link_to 'Últimos cambios', '' %></li>
+      <li><%= link_to 'Recibe actualizaciones', '' %></li>
+      <li><%= link_to 'Tu cuenta', '' %></li>
+    </ul>
+  </menu>
+
+</footer>
+
+
+<footer class="app">
+    Built with XXX / by Populate.tools
+</footer>
+
+
+</body>
+</html>
