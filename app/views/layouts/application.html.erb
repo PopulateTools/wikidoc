@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Wikidoc</title>
+  <%= display_meta_tags :site => 'Lo Que Hicimos Fue Secreto', :reverse => true %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -33,18 +33,15 @@
 
   <menu class="tools_links">
     <ul class="after_separator">
-      
+      <li><%= link_to 'Acerca de', '' %></li>
+      <li><%= link_to 'Últimos cambios', '' %></li>
+      <li><%= link_to 'Recibe actualizaciones', '' %></li>
       <% if logged_in? %>
         <li><%= link_to t('hello', name: current_user.name), current_user %></li>
         <li><%= link_to t('log_out'), logout_path, method: "delete" %></li>
       <% else %>
         <li class="cd-signin sb-close"><%= link_to 'Conéctate', '#0', :class => 'cd-signin' %></li>
       <% end %>
-
-      <li><%= link_to 'Acerca de', '' %></li>
-      <li><%= link_to 'Últimos cambios', '' %></li>
-      <li><%= link_to 'Recibe actualizaciones', '' %></li>
-      <li><%= link_to 'Tu cuenta', '' %></li>
     </ul>
   </menu>
 
