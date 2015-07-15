@@ -17,5 +17,6 @@
 //= require_tree .
 
 //= require vendor/modernizr
+//= require modules/modal
 //= require general
 //= require vendor/populate_utilities

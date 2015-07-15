@@ -1,0 +1,253 @@
+es:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "Error al guardar"
+      models:
+        project:
+          attributes:
+            countries:
+              invalid: "tiene que contener nombres válidos de país"
+        donation:
+          attributes:
+            date:
+              invalid: "tiene que ser hoy o anterior a hoy"
+    models:
+      user: Usuario
+      invitation: Invitación
+      category: Categoría
+      donation: Donación
+      project: Proyecto
+    attributes:
+      user:
+        name: Nombre
+        email: Correo-e
+        password: Contraseña
+        password_confirmation: Confirma tu contraseña
+        country: País
+      invitation:
+        invited_email: Correo-e
+        user: Usuario
+      project:
+        name: Nombre
+        url: URL
+        description: Descripción
+        category_id: Categoría
+        donation_url: URL de donaciones
+        countries: Países
+      donation:
+        date: Fecha
+        project_id: Proyecto
+        quantity: Cantidad
+        currency: Moneda
+        user_id: Usuario
+        comment: Comentario
+  language_name: 'Español'
+  hello: "Hola %{name}"
+  log_out: Salir
+  login: Entrar
+  # generics
+  project: 'Proyecto'
+  Projects: 'Proyectos'
+  Donations: 'Donaciones'
+  Users: 'Usuarios'
+  About: 'Acerca de'
+  description: 'Descripción'
+  url: 'URL'
+  donation_url: 'URL para donaciones'
+  create: 'Crear'
+  invite: 'Invitar'
+  choose_your_language: 'Elige tu idioma'
+  want_to_contribute_your_own_language: '¿Quieres contribuir con tu idioma?'
+  sure: '¿Estás seguro?'
+  category: Categoría
+  # home
+  no: no
+  title: Título
+  text: Texto
+  save: Guardar
+  home: 
+    read_more_about_this_project: "Más sobre este proyecto"
+    have_you_donated_sometime: ¿Has donado alguna vez a una ONG o un proyecto?
+    not_yet: Todavía no
+    yes_of_course: Sí
+    so_its_about_time: Pues ya va siendo hora, ¿o qué?
+    so_its_about_time_explanation: |
+      Te animamos a que contribuyas con una pequeña (o gran) donación a uno de los muchos proyectos que se mantienen gracias a las contribuciones de personas como tú. Hay proyectos de todo tipo, seguro que encuentras alguno que haga algo que te parezca interesante.
+
+      Hay un montón de personas realizando donaciones a proyectos que les importan. Puedes leer por qué lo hacen y a lo mejor te sirve de inspiración. Sabemos que los tiempos están como están, pero casi siempre se puede sacar alguna pequeña cantidad.
+
+      Lo de pensar en realizar alguna donación nos ayuda a poner en perspectiva en qué nos gastamos nuestro dinero. Las grandes multinacionales "optimizan" el importe de sus impuestos con prácticas fiscales opacas y cuestionables. ¿Dónde acaba nuestro dinero? Apoyando de forma directa a pequeñas organizaciones, tienes un mejor control de a qué se dedica tu dinero.
+    see_projects: Ver proyectos
+    see_donations: Ver donaciones
+    would_you_like_to_recruit_more_support: ¿Te gustaría conseguir más apoyo para los proyectos a los que has donado?
+    you_are_not_the_only_one: No eres el único
+    you_are_not_the_only_one_explanation: |
+      Según las estadísticas y muchos testimonios de responsables de grandes ONGs, un gran porcentaje de donantes no está por la labor de hacer pública su donación. Pero nosotros pensamos que es absurdo. Donar es solo la primera parte, contarlo y  conseguir más donantes, la segunda y más importante.
+    do_you_fancy_creating_your_public_trackdon: ¿Te animas a crear tu cuaderno público de donaciones para inspirar a tus amigos?
+    how_not: ¿Cómo que no?
+    how_not_explanation: No esperábamos que nadie dijese esto, la verdad... A ver que nos inventamos ahora. Bueno, la verdad es que no mucho. Dejaremos que la evidencia hable por si misma. Échale un vistazo a las donaciones que han registrado otros usuarios en TrackDons para que entiendas qué motivaciones tienen para hacerlo.
+    ok_we_get_it: Bueno, vale. Lo entendemos
+    ok_we_get_it_explanation: |
+      Más de uno nos ha dicho que hablar de sus donaciones en público es como presumir de ellas, y que ellos no quieren presumir; solo ayudar. Nosotros tampoco queremos que presumas, solo que inspires a tus amigos y les des ideas: de que pueden donar, y a qué proyectos. Por eso, cuando registras una donación puedes mantener la cantidad como privada (solo la verás tú; el resto de tus amigos verán solo el proyecto al que has donado). [Puedes leer más sobre este proyecto](%{link}).
+
+      Si aún así sigues sin verlo claro, que sepas que estamos pensando en ofrecer la posibilidad de que puedas tener un perfil privado que te ayude a gestionar tus donaciones de forma confidencial. Si estás interesado en algo así, [dános un toque](lets@trackdons.org) y puede que le demos prioridad ;)
+  sessions:
+    new:
+      login: Identificarse
+      remember_me: Recuérdame en este equipo
+      forgot_password: '¿Olvidaste la contraseña?'
+      login_action: Entrar
+      create_account: Crear cuenta
+      login_with_twitter: Entrar con Twitter
+      login_with_facebook: Entrar con Facebook
+      user: Usuario
+      name: Nombre y Apellido
+      email: Correo-e
+      password: Contraseña
+      password_confirmation: Confirmación de contraseña
+      already_have_account: Ya tengo cuenta
+      back_to_login: Iniciar sesión
+      recover_password: Recuperar password
+      connect_with_twitter_or_facebook: Conéctate con Twitter o Facebook
+      well_never_publish: Nunca publicaremos algo sin tu permiso (¡odiamos cuando nos pasa!)
+      or_choose_tradition: O haz lo de rellenar campos
+      complete_your: Completa tu registro
+      tell_us_to_recover: "Dinos tu correo-e y te ayudaremos a recuperar tu contraseña:"
+    create:
+      invalid_data: Credenciales incorrectos
+  password_resets:
+    password_reset_subject: Recupera tu contraseña
+    new:
+      reset_your_password: Recupera tu contraseña
+      email: Correo-e
+      continue: Continuar
+      enter_your_email: 'Introduce tu correo-e para recuperar tu contraseña:'
+    create:
+      invalid_email: Correo-e no válido
+      success: Te acabamos de enviar un correo-e con un enlace para recuperar tu contraseña
+    edit:
+      reset_your_password: Recupera tu contraseña
+      save: Guardar cambios
+      enter_your_password: 'Introduce tu nueva contraseña:'
+    update:
+      success: Contraseña actualizada correctamente
+  users:
+    invite: 'Invita un amigo'
+    you_already_have_an_account: '¡Ya tienes una cuenta! Guarda la invitación para alguien más...'
+    dont_have_an_account_yet_html: ¿Aún no tienes una cuenta? Estamos empezando y dejando poco a poco a la gente registrarse. Puedes pedirle a un amigo una invitación, o responder estas %{href} que nos ayudarán a definir el producto y darte antes una invitación.
+    dont_have_an_account_yet_href: 'preguntas rápidas'
+    labels:
+      your_friends_name: El nombre de tu amigo/a
+      your_friends_email: El email de tu amigo/a
+    header:
+      donated: donado
+      in_the_last_month: en el último mes
+      in_total: en total
+      has_donated_to: Ha donado a
+      thinking_on_donating_to: Pensando en donar a
+      project:
+        one: '%{count} proyecto'
+        other: '%{count} proyectos'
+    show:
+      edit_your_profile: Edita tu perfil
+      track_your_first_donation: Registra tu primera donación
+      get_started: 'Empieza ahora:'
+      welcome: 'Bienvenido! Utiliza TrackDons para llevar un registro de los proyectos a los que has apoyado, dar difusión a tus donaciones e inspirar a tus amigos.'
+      following: Siguiendo
+      not_following_projects_yet: 0 proyectos seguidos
+    index:
+      please_log_in: Por favor, inicia sesión
+    edit:
+      update_your_profile: Actualiza tu perfil
+      gravatar: Actualiza tu avatar en gravatar.com
+      country: País
+    sidebar:
+      update_your_profile: Actualiza tu perfil
+      external_services: Servicios externos
+      profile_options: Opciones del perfil
+    new:
+      signup: Crea tu cuenta
+      signup_with_twitter: Registrarse con Twitter
+      signup_with_facebook: Registrarse con Facebook
+    form:
+      save: Guardar
+    create:
+      invalid_data: Los datos introducidos no son válidos. Por favor revísalos y vuelve a intentarlo.
+      account_already_exists: Ya existe otra cuenta con este e-mail. Por favor, inicia sesión y vincula tu cuenta desde el perfil.
+  external_authentications:
+    index:
+      external_services: Servicios externos
+      unlink: Desvincular cuenta
+      link: Vincular cuenta de %{account}
+    create:
+      link_successful: Cuenta vinculada correctamente
+    destroy:
+      unlink_successful: Cuenta desvinculada correctamente
+    complete_signup:
+      complete_signup: Completa el registro
+      save: Guardar
+      complete_signup_info: "Para completar el registro necesitamos que introduzcas tu e-mail:"
+  external_service_unauthorized:
+    unauthorized: Servicio no pudo ser vinculado
+  invitations:
+    dont_have_enough_invitations: No tienes suficientes invitaciones. Sigue registrando donaciones y más, y pronto tendrás nuevas invitaciones.
+    pending_invites: "Tienes %{count} invitaciones disponibles. Dales buen uso y deja a tus amigos promocionar proyectos a los que donan."
+    already_exists: Mmm... it seems that the email you are trying to invite is already registered or is not a correct email. Try another!
+    invitation_send_subject: 'Tu amigo/a %{friend} quiere que registres y compartas tus donaciones.'
+    invitation_accepted_subject: 'Tu amigo %{friend} ha aceptado tu invitación'
+    invitation_sent: 'Genial, tu invitación ha sido enviada. Veamos si tu amigo/a es tan buena persona como tú ;)'
+    not_valid: 'Mmm.... Tu invitación no parece válida.'
+    welcomme_message: '¡Genial! Con esta invitación te puedes registrar en TrackDons y empezar a registrar tus donaciones. Y después de registrar las primeras, recibirás invitaciones para que puedas animar a tus amigos a registrarse.'
+    alive_and_donating: registrado y donando ;)
+    not_yet_a_user: todavía no se ha registrado :( dále un toque!
+  user_mailer:
+    send_invitation: 
+      send_invitation_mail: |
+        Hola, 
+
+        Tu amigo %{name} está usando TrackDons.org para registrar sus donaciones a proyectos (ONGs, proyectos de software, crowdfundings). La idea es que si todo el mundo comparte sus donaciones, le daremos más visibilidad a los proyectos y obtendrán más recursos.
+
+        ¿Has donado recientemente a algún proyecto? Regístralo y díselo a tus amigos:
+
+        %{url}
+
+        Si tienes algún comentario escríbenos a lets@trackdons.org
+    accepted_invitation:
+      accepted_invitation_mail: |
+        Hola,
+
+        Tu amigo %{name} acaba de aceptar tu invitación y se ha apuntado a TrackDons. O sea que ahora dos cosas han pasado:
+        
+        - Puedes dar la bienvenida a tu amigo: %{friend_page}
+
+        - Tienes una nueva invitación disponible. ¿No es fantástico? Piensa en tu próximo-amigo-más-activo-donante, y llámale... (esto... y también acuérdate de invitarle)
+        
+        Siempre nos gusta escuchar opiniones sobre otros donantes, puedes escribirnos a lets@trackdons.org
+    password_reset:
+      password_reset_email: |
+        Hola,
+
+        Alguien, probablemente tú, has pedido ayuda para recuperar tu contraseña de TrackDons. Sigue este enlace para recuperarla:
+
+        %{url}
+
+        Si no has sido tú, puedes ignorar este mensaje, y tu contraseña seguirá siendo la misma. Si tienes algún comentario escríbenos a lets@trackdons.org
+  
+  date:
+    formats:
+      donation: "%d.%m.%Y"
+    picker:
+      previousMonth: 'Mes Anterior'
+      nextMonth: 'Mes Siguiente'
+      months: ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']
+      weekdays: ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado']
+      weekdaysShort: ['Do','Lu','Ma','Mi','Ju','Vi','Sa']
+  time:
+    formats:
+      donation: "%d.%m.%Y"
+  helpers:
+    label:
+      session:
+        email: Correo-e
+        password: Contraseña

@@ -1,0 +1,20 @@
+
+<main class="content">
+
+  <h1><%= title(t('.complete_signup')) %></h1>
+
+  <p><%= t('.complete_signup_info') %></p>
+
+  <%= form_for(@user, html: {class: "simple_form"}) do |f| %>
+    <p>
+      <%= f.label :email %>
+      <%= f.text_field :email, class: 'form-control', autofocus: true %>
+    </p>
+
+    <%= f.hidden_field :name %>
+    <%= f.hidden_field :username %>
+    
+    <%= f.submit t('save') %>
+  <% end %>
+
+</main>

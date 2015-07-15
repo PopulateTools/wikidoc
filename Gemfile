@@ -11,8 +11,19 @@ gem 'bourbon'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 # gem 'unicorn'
+
+gem 'rails-i18n'
+gem 'friendly_id', '~> 5.1.0'
+gem 'paper_trail', '~> 4.0.0.beta'
+gem 'redcarpet'
+gem 'omniauth-twitter'
+gem 'twitter'
+gem 'omniauth-facebook'
+gem 'koala'
+gem 'hstore_accessor'
+gem 'meta-tags'
 
 group :development, :test do
   gem 'sqlite3'

@@ -1,0 +1,6 @@
+<main class="content">
+  <h1><%= title @title %></h1>
+  <% for card in @cards %>
+    <h2><%= link_to card.title, card %> <%= card.category %></h2>
+  <% end %>
+</main>

@@ -1,23 +1,392 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
+  activerecord:
+    errors:
+      models:
+        project:
+          attributes:
+            countries:
+              invalid: "must contain a valid name of country"
+        donation:
+          attributes:
+            date:
+              invalid: "must be today or previous to today"
+  language_name: "English"
   hello: "Hello world"
+  # generics
+  project: 'Project'
+  Projects: 'Projects'
+  Donations: 'Donations'
+  Users: 'Users'
+  About: 'About'
+  description: 'Description'
+  url: 'URL'
+  donation_url: 'Donation URL'
+  create: 'Create'
+  donations: 'Donations'
+  invite: 'Invite'
+  choose_your_language: 'Choose your language'
+  want_to_contribute_your_own_language: 'Want to contribute your language?'
+  # home
+  tagline: 'A donation diary for projects that matter to you'
+  main_bullet_1: 'Recruit more supporters to projects you believe in by showing your donations'
+  main_bullet_2: "Keep track of the projects you have supported -- and don't forget to keep doing so"
+  main_bullet_3: 'Discover projects that you should be supporting'
+  read_more_about_this_project: 'Read more about this project'
+  track_a_donation: 'Track a donation'
+  track_your_first_donation: 'Track your first donation'
+  login_if_you_already: 'Login if you already have tracked'
+  sure: 'Are you sure?'
+  category: Category
+  home: 
+    read_more_about_this_project: "Read more about this project"
+    have_you_donated_sometime: Have you ever donated to an NGO or project?
+    not_yet: Not yet
+    yes_of_course: Yes
+    so_its_about_time: "So its about time, isn't it?"
+    so_its_about_time_explanation: |
+      We invite you to contribute with a small (or big) donation to one of the many projects maintained thanks to the contributions of people like you and me. There are all kinds of projects, for sure you will find some that interests you. 
+      
+      There are lots of people making donations to projects they care about. You can read why they do it and maybe it will serve as inspiration. Things are tough, but there is always something to contribute (and its not always money!)
+      
+      Thinking about donating puts in perspective in what do we spend our money. Big multinational corporations do things like "optimizing" their tax bill with opaque fiscal practices. Where does our money ends when we buy from them? Giving direct support to small organizations you get a better control of what your money is spent on.
+      
+    see_projects: Browse projects
+    see_donations: Browse donations
+    would_you_like_to_recruit_more_support: Would you like to recruit more support for the projects you have donated to?
+    you_are_not_the_only_one: You are not the only one
+    you_are_not_the_only_one_explanation: |
+      According to stats many NGO donors is not happy with sharing and making public the fact that they have donated. We think it doesn't make sense.
+
+      Donating is just the first part: The second, and most important, telling about it and recruiting more donors
+       
+    do_you_fancy_creating_your_public_trackdon: Do you fancy creating a log of your donations to inspire your friends?
+    how_not: How not?
+    how_not_explanation: We didn't expect nobody saying this, really... So let's see what we come up with now. Let's evidence speak for itself. Take a look to the donations tracked by other users so you can get a glimpse of their motivations for donatings.
+    ok_we_get_it: OK. We understand it.
+    ok_we_get_it_explanation: |
+      More than one have told us that talking publicly about their donations is like showing off, and they don't want to show off; they just want to help. We neither want to make you show off, just that you inspire your friends and give them ideas: that they can donate, and to which interesting projects. Because of that, when you track a donation you can keep the quantity private (it will only be vissible to you, your friends only will see the projects you have donated to). [Read more about TrackDons](%{link}).
+      
+      If you keep without being sure about tracking donations publicly, know that we are thinking of the possibility of creating a all-private mode that will help to be organized. If you would use something like that, [ping us](mailto:lets@trackdons.org) and we might give it priority in our roadmap ;)
+  
+  # donations
+  donations:
+    destroy:
+      destroy_success: 'Donation removed successfully'
+    show:
+      donation_created: 'Hooray! Your donation is tracked. You can share it with your friends to encourage them to donate as well'
+      keep_the_quantity_private: 'Keep the quantity private'
+      share_in_twitter: 'Share in Twitter'
+      share_in_facebook: 'Share in Facebook'
+      share_by_email: 'Share by email'
+      your_tracked_donation: 'Your tracked donation'
+      user_donated_quantity_to_project: '%{name} donated %{donation} to %{project}'
+      share_email_subject: 'Have you donated lately?'
+      share_email_body: 'With TrackDons you can keep track of all your donations and encourage others to donate. Checkout my latest donation to %{project} here: %{url}'
+      share_tweet: 'I have tracked a donation to %{project}: %{url}. Think about donating!'
+      donation_date: 'Donation Date: %{date}'
+      next: 'Next:'
+      project_page: '%{project} project page'
+      more_donations_by: 'More donations by %{user}'
+      other_projects: 'Other projects'
+      user_is_using: '%{name} is using TrackDons to keep a log of the donations he makes to projects in which he believes in.'
+      in_which_projects: In which projects do you believe in?
+      create_your_own: Create your own log book and help your favourite projects. 
+      great_donation_tracked: Great, your donation is tracked. This is just the beginning.
+      be_an_active_promoter: Be an active promoter of the donation you have done. 
+      its_the_best_way: Its the best way to convince your friends to donate.
+      convince_your_friends_explain: 'Convince your friends to donate: explain why you did it'
+    donation_do_widget:
+      link_title: 'Track a Donation for this project'
+    donation:
+      to: 'to'
+      by: 'by'
+      edit: 'Edit'
+      edit_title: 'Edit donation'
+      delete: 'Delete'
+      delete_title: 'Delete donation'
+      sure: 'Are you sure?'
+      a_donation: A donation
+      donated_to: donated to
+      private_donation_not_visible_explanation: "This donation is private, so the quantity will only be shown to the donation's author"
+      private_donation_not_visible_explanation_in_profile: "This user has private donations, so this total does not include every donation"
+      private_donation_not_visible_explanation_in_profile_for_self: "You have private donations, so the total won't show up for other users, only for you"
+      recurring_donation_started: Recurring donation, started %{started} ago
+    form:
+      update_donation: Update
+      cancel: Cancel
+      edit_your_donation: Edit your donation to the project %{name}
+      quantity_privacy_hint: "Don't be shy sharing the quantity. Everyone donates what they can / feels is right. So even a penny would be good. On the other hand, it would be fun to study how individual behaviours influence others... for good or for bad!"
+      monthly: Monthly
+      months: "%{n} months"
+      yearly: Yearly
+      i_donated_because: I donated to this project because...
+    create:
+      error_creating_donation: "Donation couldn't be created: %{errors}"
+    complete: 
+      great_just_one_thing: 'Great! Just one thing before you are done:'
+      tell_why_you_have_donated: 'Tell why you have donated, that will make the most impact in your friends and recruit more donors for the project.'
+  # donations form
+  how_much_question: 'How much?'
+  when_did_you_donate: 'When did you donate?'
+  i_want_to_explain_why: 'I want to explain why I have donated to encourage others to do so'
+  i_want_to_keep_private: 'I want to keep my donation private'
+  need_to_trackdon_for_another_project: 'Need to TrackDon for another project?'
+  add_project: '(Add project)'
+  donation: 
+    project: 'Project'
+    amount: 'Amount'
+    recurring: 'Recurring?'
+    date: 'Date'
+    recurring_date: 'Starting Date'
+    pick_date: 'Pick a date'
+    private: 'Private?'
+    description: 'Description'
+    url: 'Project URL'
+    add: '+ add another'
+  projects:
+    project: 'Project'
+    all_projects: 'All projects'
+    new_project: 'New project'
+    edit_project: 'Edit project'
+    donate_in_project_site: "Donate in project's site"
+    did_you_track: 'Did you donate to this project? TrackDon!'
+    invite_your_friends_to_this_page: 'Invite your friends to this page'
+    index:
+      global: Global
+      any_category: All
+      categories: Categories
+      countries: Countries
+      latest: Latest
+      alpha: Alpha
+      popular: Popular
+      create_a_new_project: There are no projects in the category %{category}. Be the first to create <a href="%{href}">one</a>!
+    new:
+      existing_project_error: A project with this name already exists
+    create:
+      project_created: Project created. Share the word and start donation-saving!
+    show:
+      have_you_donated: Have you donated to the project?
+      do_you_want_to_actually_donate: Do you want to actually donate to the project?
+      invite_your_friends_to_this_page: Invite your friends to this page
+      follow: Follow
+      trackdon: TrackDon
+      donations_number: 
+        one: '%{count} donation'
+        other: '%{count} donations'
+      donors_number: 
+        one: '%{count} donor'
+        other: '%{count} donors'
+      donations_last_week:
+        one: "%{count} donation in the last week"
+        other: "%{count} donations in the last week"
+      people_donated:
+        one: "%{count} person have donated in total"
+        other: "%{count} people have donated in total"
+      donations_in_total:
+        one: "%{count} donation in total"
+        other: "%{count} donations in total"
+      edit: Edit
+      delete: Delete
+      updates: Updates
+      related_projects: Related Projects
+    form:
+      select_category: Select category
+    destroy: 
+      deleted: The project has been eliminated. Hope it made sense
+    action_buttons:
+      follow_explanation: Be updated on project achievements and news, and receive donation suggestions and reminders
+      follow: Follow
+      following: Following
+      unfollow: Unfollow
+      thinking_on_donating: Thinking on donating
+    form:
+      select_category: Select category
+  shared:
+    user_links:
+      hello: "Hello %{name}"
+      log_out: Log out
+      login: Login to TrackDons
+      track_your_first_donation: Track your first donation
+  sessions:
+    new:
+      login: Login to TrackDons
+      remember_me: Remember me on this computer
+      forgot_password: 'Forgot password?'
+      login_action: Log in
+      create_account: Create account
+      login_with_twitter: Log in with Twitter
+      login_with_facebook: Log in with Facebook
+      user: User
+      name: Name & Surname
+      email: Email
+      password: Password
+      password_confirmation: Password confirmation
+      already_have_account: I have an account
+      back_to_login: Back to login
+      recover_password: Recover password
+      connect_with_twitter_or_facebook: Connect with Twitter or Facebook to start tracking your donations quick and with friends
+      well_never_publish: We'll never publish anything without asking for explicit consent (we hate it!)
+      or_choose_tradition: Or just do the traditional field filling 
+      complete_your: Complete your signup and you'll be tracking in 3, 2, 1...
+      tell_us_to_recover: "Tell us your email and we'll help you recover your password: "     
+    create:
+      invalid_data: Invalid credentials
+  password_resets:
+    password_reset_subject: Reset your password at TrackDons
+    new:
+      reset_your_password: Reset your password
+      email: Email
+      continue: Continue
+      enter_your_email: 'Enter your email to recover your password:'
+    create:
+      invalid_email: Invalid email address
+      success: We have just sent you an email with a link to recover your password
+    edit:
+      reset_your_password: Reset your password
+      save: Save changes
+      enter_your_password: 'Enter your new password:'
+    update:
+      success: Password updated successfully
+  users:
+    invite: 'Invite a friend'
+    you_already_have_an_account: 'You already have an account! Save that invitation for someone else...'
+    dont_have_an_account_yet_html: Don't have an account yet? We are just getting started and letting people in bit by bit. You can ask a friend for an invitation, or answer these %{href} that will help us shape the product to get an invite soon. 
+    dont_have_an_account_yet_href: 'quick questions'
+    labels:
+      your_friends_name: Your friend's name
+      your_friends_email: Your friend's email
+    header:
+      donated: donated
+      in_the_last_month: in the last month
+      in_total: in total
+      has_donated_to: Has donated to
+      thinking_on_donating_to: Thinking on donating to
+      project:
+        one: '%{count} project'
+        other: '%{count} projects'
+    show:
+      edit_your_profile: Edit your profile
+      track_your_first_donation: Track your first donation
+      get_started: 'Get started right now:'
+      welcome: 'Welcome! Use TrackDons to keep track of the projects you have supported, and share your donations to inspire your friends.'
+      following: Following
+      not_following_projects_yet: 0 projects followed
+    index:
+      please_log_in: Please log in
+    edit:
+      update_your_profile: Update your profile
+      gravatar: Change your avatar at gravatar.com
+      country: Country
+    sidebar:
+      update_your_profile: Update your profile
+      external_services: External services
+      profile_options: Profile options
+    new:
+      signup: Create your account
+      signup_with_twitter: Signup with Twitter
+      signup_with_facebook: Signup with Facebook
+    form:
+      save: Save
+    create:
+      account_already_exists: There's an account with this email. Please, login and link the account from the profile page.
+      invalid_data: The data you've introduced is not valid. Please, check it and try again.
+  external_authentications:
+    index:
+      external_services: External services
+      unlink: Unlink account
+      link: Link %{account} account
+    create:
+      link_successful: Account linked successfully
+    destroy:
+      unlink_successful: Account unlinked successfully
+    complete_signup:
+      complete_signup: Complete the signup
+      complete_signup_info: "To complete the signup we need you to provide your email:"
+      save: Save
+  external_service_unauthorized:
+    unauthorized: Service couldn't be linked
+  invitations:
+    dont_have_enough_invitations: You don't have enough invitations. Keep tracking donations and more, and you will get them!
+    pending_invites: "You have %{count} invites available. Put them to good use and let your friends promote the projects they donate to."
+    already_exists: Mmm... it seems that the email you are trying to invite is already registered or is not a correct email. Try another!
+    invitation_send_subject: 'Your friend %{friend} wants you to track and share your donations'
+    invitation_accepted_subject: 'Your friend %{friend} has accepted your invitation'
+    invitation_sent: 'Great, your invitation has been sent. Lets see if your friend is such a great person as you are ;)'
+    not_valid: 'Mmm... your invitation does not seem to be valid.'
+    welcome_message: 'Great! With this invitation you can sign up for TrackDons and start tracking your donations. And after your first tracks, you will also be able to invite that friend you know needs this project'
+    alive_and_donating: alive and donating ;)
+    not_yet_a_user: not yet a user :( ping her!
+  user_mailer:
+    send_invitation: 
+      send_invitation_mail: |
+        Hi, 
+
+        Your friend %{name} is using TrackDons.org to track her donations to projects (NGOs, software projects, crowdfundings). The idea is that if everyone share their donations, we'll give more vissibility to projects and we'll obtain more resources for them. 
+
+        Have you donated recently to any project? Track it and tell it to your friends:
+
+        %{url}
+
+        If you have any comment, just write us to lets@trackdons.org
+    accepted_invitation:
+      accepted_invitation_mail: |
+        Hi,
+
+        Your friend %{name} has just accepted your invitation to join TrackDons.org. So, two amazing things have just happened: 
+
+        - You can go and greet your friend: %{friend_page}
+
+        - You have a new invitation available. Isn't that fantastic? Think on your next-most-active-donator friend, and call him (err... also remember to invite him)
+
+        We are always happy to hear from fellow donators, reach us at lets@trackdons.org
+    password_reset:
+      password_reset_email: |
+        Hi,
+
+        Somebody, hopefully you, has requested some help to recover your TrackDons password. Click here to get that help:
+
+        %{url}
+
+        If you haven't requested the password recovery, just ignore this message. If you have any comment, just write us to lets@trackdons.org
+  metas:
+    home:
+      description: TrackDons is a donation diary for projects that matter to you. An online experience to help with your donation efforts      
+    about:
+      description: Learn about TrackDons, its organization, how it works, how you can collaborate...
+      title: 'About'
+    projects:
+      home: 
+        description: Browse and discover all the different projects you can donate to
+        title: All projects
+        title_with_category_and_country: Projects for %{category} from %{country}
+        title_with_category: Projects for %{category}
+        title_with_country: Projects from %{country}
+        keywords: projects, donation, discover
+      project: 
+        description: Track your donations to %{name} with TrackDons and extend the projects reach
+        title: All projects
+        keywords: projects, donation, discover
+    donations:
+      home: 
+        description: Browse and discover last donations reported on TrackDons
+        title: Last donations
+        keywords: donations, report, discover
+      donation:
+        description: "%{user} has made a donation to %{project} and has tracked it with donation tracking tool TrackDons"
+        title: Donation to %{project} by %{user}
+    users:
+      user:
+        description: "Check %{user} donations on TrackDons and get inspiration to donate"
+        title: "%{user} profile"
+  date:
+    formats:
+      donation: "%b %d %Y"
+    picker:
+      previousMonth: 'Previous Month'
+      nextMonth: 'Next Month'
+      months: ['January','February','March','April','May','June','July','August','September','October','November','December']
+      weekdays: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+      weekdaysShort : ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
+  time:
+    formats:
+      donation: "%b %d %Y"

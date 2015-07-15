@@ -10,25 +10,37 @@
 
 <header class="site">
   <div class="main clearfix">
-    <%= image_tag 'lqh-logo.png', class: 'logo' %>
+    <%= link_to((image_tag 'lqh-logo.png', class: 'logo'), root_path) %>
 
     <menu class="content">
       <ul>
-        <li><%= link_to 'La Película', '/sandbox/list' %></li>
+      <% for category in Card.categories.keys %>
+        <li><%= link_to category.pluralize, card_category_path(category) %></li>  
+      <% end %>
+
+        <!-- <li><%= link_to 'La Película', '/sandbox/list' %></li>
         <li><%= link_to 'Bandas', '' %></li>
         <li><%= link_to 'Personas', '' %></li>
         <li><%= link_to 'Épocas', '' %></li>
         <li><%= link_to 'Temas', '' %></li>
-        <li><%= link_to 'Lugares', '' %></li>
+        <li><%= link_to 'Lugares', '' %></li> -->
       </ul>
     </menu>
 
-    <%= link_to 'Add content', '/sandbox/edit', class: 'add_content' %>
+    <%= link_to 'Add content', new_card_path, class: 'add_content' %>
 
   </div>
 
   <menu class="tools_links">
     <ul class="after_separator">
+      
+      <% if logged_in? %>
+        <li><%= link_to t('hello', name: current_user.name), current_user %></li>
+        <li><%= link_to t('log_out'), logout_path, method: "delete" %></li>
+      <% else %>
+        <li class="cd-signin sb-close"><%= link_to 'Conéctate', '#0', :class => 'cd-signin' %></li>
+      <% end %>
+
       <li><%= link_to 'Acerca de', '' %></li>
       <li><%= link_to 'Últimos cambios', '' %></li>
       <li><%= link_to 'Recibe actualizaciones', '' %></li>
@@ -57,6 +69,10 @@
 <footer class="app">
     Built with XXX / by Populate.tools
 </footer>
+
+<% unless logged_in? %>
+  <%= render 'users/modal_login' %>
+<% end %>
 
 
 </body>

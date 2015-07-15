@@ -2,6 +2,7 @@
 @import "vendor/populate_utilities";
 
 
+
 /*
  * Palette for: Lo Que Hicimos
  *
@@ -19,6 +20,8 @@ $third_1: #E6BB70;
 $main_soft: #F8D0BE;
 $main_soft_separator: #C2A395;
 
+@import "modal";
+@import "white-spacing";
 
 /*
  * Fonts
@@ -64,6 +67,7 @@ header.site {
     font-family: $font_headings;
     font-size: 13px;
     margin-top: 1.35em;
+    float: left;
 
     a {
       color: $third_1;
@@ -111,6 +115,16 @@ footer.app {
  */
 h1, h2, h3, h4, h5 {
   font-family: $font_headings;
+}
+
+main.content {
+  width: 70%;
+  margin: 3em auto;
+  .cont {
+    background: $white; 
+    @include border-radius(10px);
+    padding: 2em;
+  }
 }
 
 /*
