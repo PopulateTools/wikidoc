@@ -8,6 +8,10 @@ class Card < ActiveRecord::Base
   belongs_to :user
 
   acts_as_followable
+  acts_as_follower
+
+  after_create :follow_cards
+  after_save :follow_cards
 
   def content_wikilinked
     # chapucilla; habría que meterlo como una opción/extensión de markdown para que se compatibilice con la opción filter_html
@@ -30,6 +34,10 @@ class Card < ActiveRecord::Base
     slug.blank? || title_changed?
   end
 
+  def self.normalize_friendly_id(string)
+    normalize_friendly_id(string)
+  end 
+  
   def normalize_friendly_id(string)
     # super.upcase.gsub("-", "_")
 
@@ -48,6 +56,25 @@ class Card < ActiveRecord::Base
     end
     parameterized_string
 
+  end
+
+  def follow_cards
+    # book = Book.find(1)
+    # user = User.find(1)
+    # user.follow(book) # Creates a record for the user as the follower and the book as the followable
+
+    # buscar a las páginas a las que se enlaza
+    self.content.gsub(/\[\[([^\]]+)\]\]/) { follow_linked_card($1) }
+    
+  end
+
+  def follow_linked_card(name)
+    logger.debug name
+    if card_exists(name)
+      c = Card.friendly.find(normalize_friendly_id(name))
+      # self.follow(c)
+      c.follow(self)
+    end
   end
 
 end

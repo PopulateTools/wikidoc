@@ -3,6 +3,7 @@ class CardsController < ApplicationController
   before_action :logged_in_user, only: [:new, :create]
   before_action :load_card, only: [:edit, :update]
   before_filter :find_post, only: [:show]
+  before_action :load_follows, only: [:show]
 
   def new
     @card = Card.new
@@ -62,6 +63,13 @@ class CardsController < ApplicationController
 
     def load_card
       @card = Card.friendly.find(params[:id])
+    end
+
+    def load_follows
+      @card_following = []
+      @card.all_follows.each do |card|
+        @card_following << Card.find(card.followable_id)
+      end
     end
 
     def find_post

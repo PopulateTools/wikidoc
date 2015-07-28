@@ -34,6 +34,16 @@
     <div class="related text_content">
       
       <div class="related_block">
+
+        <p>Enlaza aquí:</p>
+
+        <ul>
+        <% @card_following.each do |following| %>
+          <li><%= link_to following.title, following %></li>
+        <% end %>
+        </ul>
+
+      <!--
         <h3>Capítulos</h3>
         <ul>
           <li><%= link_to 'Capítulo 1: Madrid, qué bien resistes', '' %></li>
@@ -96,7 +106,7 @@
           <li><%= link_to 'Avenida de América', '' %></li>
         </ul>
       </div>
-
+    -->
     </div>
 
     <div class="conversations hidden">
