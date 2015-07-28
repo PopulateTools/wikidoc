@@ -11,14 +11,14 @@ class Card < ActiveRecord::Base
 
   def content_wikilinked
     # chapucilla; habría que meterlo como una opción/extensión de markdown para que se compatibilice con la opción filter_html
-    text = content.gsub(/\[\[([^\]]+)\]\]/) { link_to_card($1) }
+    text = content.gsub(/\[\[([^\]]+)\]\]/) { add_wiki_links($1) }
   end
   
   def card_exists(name)
     Card.friendly.exists?(normalize_friendly_id(name))
   end 
 
-  def link_to_card(name)
+  def add_wiki_links(name)
     if card_exists(name)
       '<a href="'+normalize_friendly_id(name)+'">'+name+'</a>'
     else
