@@ -1,11 +1,14 @@
 class CardsController < ApplicationController
 
   before_action :logged_in_user, only: [:new, :create]
-  before_action :load_card, only: [:show, :edit, :update]
+  before_action :load_card, only: [:edit, :update]
   before_filter :find_post, only: [:show]
 
   def new
     @card = Card.new
+    if params[:id]
+      @card.title = params[:id].gsub('_', ' ')
+    end
   end
 
   def create
@@ -35,6 +38,12 @@ class CardsController < ApplicationController
   end
 
   def show
+    if @card = Card.friendly.find(params[:id])
+      render 'show'
+    else
+      @potential_title = params[:id]
+      render 'cards/dont_exist'
+    end
   end
 
   def edit
@@ -56,13 +65,18 @@ class CardsController < ApplicationController
     end
 
     def find_post
-      #@card = Card.find params[:id]
+      if Card.friendly.exists?(params[:id])
+        @card = Card.friendly.find(params[:id])
 
-      # If an old id or a numeric id was used to find the record, then
-      # the request path will not match the post_path, and we should do
-      # a 301 redirect that uses the current friendly id.
-      if request.path != card_path(@card)
-        return redirect_to @card, :status => :moved_permanently
+        # If an old id or a numeric id was used to find the record, then
+        # the request path will not match the post_path, and we should do
+        # a 301 redirect that uses the current friendly id.
+        if request.path != card_path(@card)
+          return redirect_to @card, :status => :moved_permanently
+        end
+      else
+        @potential_title = params[:id]
+        render 'cards/dont_exist'
       end
     end
 

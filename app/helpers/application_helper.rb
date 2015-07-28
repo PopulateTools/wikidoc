@@ -25,10 +25,12 @@ module ApplicationHelper
   def markdown(text)
     return if text.blank?
 
+    #text.gsub(/\[\[([^\]]+)\]\]/) { '<a href='+$1+'>'+$1+'</a>' }
+
     options = {
-      filter_html:     true,
+      #filter_html:     true,
       hard_wrap:       true, 
-      link_attributes: { rel: 'nofollow', target: "_blank" },
+      #link_attributes: { rel: 'nofollow', target: "_blank" },
       space_after_headers: true, 
       fenced_code_blocks: true
     }
@@ -43,6 +45,12 @@ module ApplicationHelper
     markdown = Redcarpet::Markdown.new(renderer, extensions)
 
     markdown.render(text).html_safe
+
   end
+
+  def wikilinks(text)
+    
+  end
+
 
 end

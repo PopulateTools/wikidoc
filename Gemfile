@@ -24,6 +24,7 @@ gem 'omniauth-facebook'
 gem 'koala'
 gem 'hstore_accessor'
 gem 'meta-tags'
+gem "acts_as_follower"
 
 group :development, :test do
   gem 'sqlite3'

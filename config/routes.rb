@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
   root 'cards#index'
-
-  resources :cards
+  
+  get 'cards/new/(:id)', to: 'cards#new', as: :new_card
   get 'cards/category/(:category)', to: 'cards#index', as: :card_category
+  resources :cards
   resources :users
 
   get 'auth/:service/callback', to: 'external_authentications#create'
