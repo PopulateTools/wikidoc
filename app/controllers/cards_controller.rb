@@ -28,6 +28,7 @@ class CardsController < ApplicationController
     if params[:category]
       if Card.categories.include? params[:category]
         @title = params[:category].pluralize.capitalize
+        @category = params[:category]
         @cards = Card.where(category: Card.categories[params[:category]])  
       else
         raise ActionController::RoutingError, 'Not Found'

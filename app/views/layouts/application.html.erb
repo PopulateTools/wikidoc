@@ -17,13 +17,6 @@
       <% for category in Card.categories.keys %>
         <li><%= link_to category.pluralize, card_category_path(category) %></li>  
       <% end %>
-
-        <!-- <li><%= link_to 'La Película', '/sandbox/list' %></li>
-        <li><%= link_to 'Bandas', '' %></li>
-        <li><%= link_to 'Personas', '' %></li>
-        <li><%= link_to 'Épocas', '' %></li>
-        <li><%= link_to 'Temas', '' %></li>
-        <li><%= link_to 'Lugares', '' %></li> -->
       </ul>
     </menu>
 
@@ -33,9 +26,11 @@
 
   <menu class="tools_links">
     <ul class="after_separator">
+      <!--
       <li><%= link_to 'Acerca de', '' %></li>
       <li><%= link_to 'Últimos cambios', '' %></li>
       <li><%= link_to 'Recibe actualizaciones', '' %></li>
+      -->
       <% if logged_in? %>
         <li><%= link_to t('hello', name: current_user.name), current_user %></li>
         <li><%= link_to t('log_out'), logout_path, method: "delete" %></li>
@@ -53,17 +48,19 @@
     
   <menu class="tools_links">
     <ul class="after_separator">
-      <li><%= link_to 'Acerca de', '' %></li>
-      <li><%= link_to 'Últimos cambios', '' %></li>
-      <li><%= link_to 'Recibe actualizaciones', '' %></li>
-      <li><%= link_to 'Tu cuenta', '' %></li>
+      <% if logged_in? %>
+        <li><%= link_to t('hello', name: current_user.name), current_user %></li>
+        <li><%= link_to t('log_out'), logout_path, method: "delete" %></li>
+      <% else %>
+        <li class="cd-signin sb-close"><%= link_to 'Conéctate', '#0', :class => 'cd-signin' %></li>
+      <% end %>
     </ul>
   </menu>
 
 </footer>
 
 
-<footer class="app">
+<footer class="app clearfix">
     Built with XXX / by Populate.tools
 </footer>
 

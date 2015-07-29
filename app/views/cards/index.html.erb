@@ -1,6 +1,13 @@
-<main class="content">
+<main class="content list cards <%= @category %> clearfix">
+  
   <h1><%= title @title %></h1>
+  
   <% for card in @cards %>
-    <h2><%= link_to card.title, card %> <%= card.category %></h2>
+    <div class="card <%= card.category %>">
+      <div class="inner_cont">
+        <h2><%= link_to card.title, card %></h2>
+      </div>
+    </div>
   <% end %>
+  
 </main>

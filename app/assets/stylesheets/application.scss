@@ -255,6 +255,31 @@ main.content {
     }
   }
 }
+.list.cards {
+  .card {
+    width: 22%;
+    margin: 0 4% 4% 0;
+    float: left;
+    overflow: hidden;
+
+    h2 {
+      margin: 0;
+      font-size: 1em;
+      a {
+        display: block;
+        padding: 1em;
+        max-height: 70px;
+        min-height: 70px;
+      }
+    }
+    .inner_cont {
+      
+    }
+  }
+  .card:nth-child(4n+1) {
+    margin-right: 0;
+  }
+}
 .create {
   form {
     input {

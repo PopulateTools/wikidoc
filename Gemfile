@@ -34,7 +34,6 @@ group :development, :test do
   gem 'spring'
   gem 'quiet_assets'
   gem 'capistrano'
-  gem 'capistrano'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
