@@ -35,14 +35,17 @@
       
       <div class="related_block">
 
-        <p>Enlaza aquí:</p>
+        <% unless @card_following.empty? %>
+          <h3>Relacionado:</h3>
 
-        <ul>
-        <% @card_following.each do |following| %>
-          <li><%= link_to following.title, following %></li>
+          <ul>
+          <% @card_following.each do |following| %>
+            <li><%= link_to following.title, following %></li>
+          <% end %>
+          </ul>
+
         <% end %>
-        </ul>
-
+        
       </div>
 
       <!--
