@@ -26,7 +26,7 @@ class Card < ActiveRecord::Base
     if card_exists(name)
       '<a href="'+normalize_friendly_id(name)+'">'+name+'</a>'
     else
-      '<a href="'+name+'" class="dont_exist">'+name+'</a> (no existe)'
+      '<a href="'+normalize_friendly_id(name)+'" class="dont_exist">'+name+'</a> (no existe)'
     end
   end
     

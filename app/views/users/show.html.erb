@@ -1,6 +1,18 @@
 
-<main class="content">
-  <div class="cont">
-    <%= @user.inspect %>
+<main class="card">
+  <div class="text_content">
+    <h1><%= @user.name %></h1>
+    <% unless @user.credentials['twitter_id'].empty? %>
+      <%= link_to '@'+@user.username, 'http://www.twitter.com/'+@user.username %>
+    <% end %>
+
+    <% unless @user.cards.empty? %>
+      <p>Ha colaborado en:</p>
+      <% for card in @user.cards %>
+        <%= link_to card.title, card %>, 
+      <% end %>
+    <% end %>
   </div>
+
+
 </main>

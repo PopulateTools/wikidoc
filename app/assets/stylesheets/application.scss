@@ -134,11 +134,16 @@ main.content {
 .card {
   position: relative;
   margin: 3em auto; 
+  padding-bottom: 3em;
   background: $white; 
   border-top: 1px solid $white;
   width: 70%;
   @include border-radius(10px);
 
+  img {
+    width: 100%;
+    height: auto;
+  }
   .main_text {
     margin-bottom: 4em;
     font-size: 16px;
@@ -175,7 +180,13 @@ main.content {
 
   .media {
     margin: 0 0 3em 0;
-
+    
+    .placeholder {
+      color: #ADADAD;
+      background: #DFDFDF;
+      text-align: center;
+      padding: 3em 2em;
+    }
     .video {
       position: relative;
       padding-bottom: 56.25%;
@@ -235,7 +246,7 @@ main.content {
         line-height: 1.4em;
 
         h3 {
-          width: 100px;
+          width: 105px;
           float: left;
           margin: 0 0 .5em 0;
           text-transform: uppercase;
@@ -279,6 +290,9 @@ main.content {
   .card:nth-child(4n+1) {
     margin-right: 0;
   }
+}
+.create.card {
+  padding-bottom: 0;
 }
 .create {
   form {

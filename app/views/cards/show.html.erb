@@ -13,8 +13,8 @@
     <h1><%= title @card.title %></h1>
   </div>
 
-  <div class="media">
-    MEDIA
+  <div class="media" style="display: none">
+    <div class="placeholder">[MEDIA WILL GO HERE]</div>
     <!-- <div class="video">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/eYQFuP4_mps" frameborder="0" allowfullscreen></iframe>
     </div> -->
@@ -36,7 +36,7 @@
       <div class="related_block">
 
         <% unless @card_following.empty? %>
-          <h3>Relacionado:</h3>
+          <h3>Enlaza aquí:</h3>
 
           <ul>
           <% @card_following.each do |following| %>
@@ -45,7 +45,7 @@
           </ul>
 
         <% end %>
-        
+
       </div>
 
       <!--
