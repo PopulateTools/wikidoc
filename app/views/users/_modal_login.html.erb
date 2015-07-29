@@ -9,14 +9,14 @@
 
         <div class="social-login mt4 mb4 clearfix">
           <%= link_to(t('.twitter'), '/auth/twitter', class: " btn float-left") %>
-          <%= link_to(t('.facebook'), '/auth/facebook', class: " btn float-right") %>
+          <%# link_to(t('.facebook'), '/auth/facebook', class: " btn float-right") %>
         </div>
 
         <div class="separator"></div>
 
       </div>
         
-      <div id="cd-login" >
+      <div id="cd-login" style="display: none">
         <%= modal_flash_message(:login) %>
 
         <p><%= t 'sessions.new.or_choose_tradition' %></p>
