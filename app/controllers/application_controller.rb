@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsManagement
   helper_method :current_user, :logged_in?, :current_user?, :login_path
+  before_action :authenticate
   
   protected
 
@@ -27,4 +28,13 @@ class ApplicationController < ActionController::Base
     def login_path
       root_path(anchor: 'login')
     end  
+
+    def authenticate
+      return true unless Rails.env.production?
+
+      authenticate_or_request_with_http_basic do |username, password|
+        username == 'loquehicimos' && password == 'populate'
+      end
+    end
+
 end
