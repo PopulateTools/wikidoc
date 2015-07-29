@@ -25,6 +25,7 @@ gem 'koala'
 gem 'hstore_accessor'
 gem 'meta-tags'
 gem "acts_as_follower"
+gem 'therubyracer'
 
 group :development, :test do
   gem 'sqlite3'
@@ -32,7 +33,12 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'quiet_assets'
-  gem 'mina'
+  gem 'capistrano'
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-passenger'
 end
 
 group :production do
